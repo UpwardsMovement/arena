@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{DCF6EF06-1637-3B51-2BC8-19AAD6A1AD24}") = "untitled_arena_shooter", "Assembly-CSharp.csproj", "{983B8EC8-7D00-FFC0-E6DB-C6DC3CC1E888}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{983B8EC8-7D00-FFC0-E6DB-C6DC3CC1E888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983B8EC8-7D00-FFC0-E6DB-C6DC3CC1E888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983B8EC8-7D00-FFC0-E6DB-C6DC3CC1E888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983B8EC8-7D00-FFC0-E6DB-C6DC3CC1E888}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
