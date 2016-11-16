@@ -5,20 +5,21 @@ using System.Collections;
 public class Enemy : LivingEntity {
 
     public enum State {Idle, Chasing, Attacking};
-    State currentState;
+    State currentState; // Finite State Machine
 
-    Color originalColour;
+    Color originalColour; // For changing colour when attacking
+    Material skinMaterial; // The material to change the colour of
 
     NavMeshAgent pathfinder;
     Transform target;
     LivingEntity targetEntity;
-    Material skinMaterial;
+    
 
     float attackDistanceThreshold = 1.5f;
     float timeBetweenAttacks = 1;
     float damage = 1;
 
-    float nextAttackTime;
+    float nextAttackTime; // Controls cooldown on melee attack
 
     bool hasTarget;
 
@@ -28,14 +29,14 @@ public class Enemy : LivingEntity {
         skinMaterial = GetComponent<Renderer>().material;
         originalColour = skinMaterial.color;
 
-        if (GameObject.FindGameObjectWithTag("Player") != null) {
+        if (GameObject.FindGameObjectWithTag("Player") != null) { // If you can find the player in the scene
             currentState = State.Chasing;
             hasTarget = true;
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag("Player").transform; // What the AI moves towards
             targetEntity = target.GetComponent<LivingEntity>();
-            targetEntity.OnDeath += OnTargetDeath;
+            targetEntity.OnDeath += OnTargetDeath; 
 
-            StartCoroutine(UpdatePath());
+            StartCoroutine(UpdatePath()); // Starts the AI running
         }
     }
 
